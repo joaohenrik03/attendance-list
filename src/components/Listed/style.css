@@ -1,0 +1,19 @@
+.listed {
+    height: 10rem;
+    width: 50%;
+    margin-bottom: 2rem;
+    padding: 2.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: hsla(345, 100%, 60%, 1);
+    border-radius: 1rem;
+
+    color: #FFF;
+}
+
+.listed strong {
+    font-size: 1.8rem;
+}
