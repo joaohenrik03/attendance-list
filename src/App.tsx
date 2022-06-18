@@ -1,7 +1,25 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import { Listed, UserListed } from './components/Listed';
+import './App.css';
 
 export function App() {
+  const [studentName, setStudentName] = useState<string>('');
+  const [students, setStudents] = useState<UserListed[]>([]);
+
+  function addPersonListed() {
+    const newStudent = {
+      name: studentName,
+      time: new Date().toLocaleTimeString('pt-br', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      })
+    };
+
+    setStudents(prevState => [...prevState, newStudent]);
+    setStudentName('');
+  }
+
   return (
     <div className="container">
       <header className='header'>
@@ -25,10 +43,21 @@ export function App() {
           id='nameInput'
           type="text"
           placeholder='Digite o nome'
+          onChange={e => setStudentName(e.target.value)}
+          value={studentName}
         />
-        <button>
+        <button onClick={addPersonListed}>
           Adicionar
         </button>
+
+        {
+          students.map(student => 
+          <Listed 
+            name={student.name} 
+            time={student.time}
+            key={student.time}
+          />)
+        }
       </div>
     </div>
   )
