@@ -1,11 +1,11 @@
 import './style.css';
 
-type Listed = {
+export type UserListed = {
     name: string;
     time: string | number;
 }
 
-export function Listed(props: Listed) {
+export function Listed(props: UserListed) {
     return(
         <div className="listed">
             <strong>{props.name}</strong>
