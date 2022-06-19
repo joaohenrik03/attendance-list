@@ -12,6 +12,10 @@ export function App() {
   const [students, setStudents] = useState<UserListed[]>([]);
 
   function addPersonListed() {
+    if (studentName.trim() === '') {
+      return window.alert('[ERRO] Preencha o campo com um dado válido e tente novamente!')
+    }
+
     const newStudent = {
       name: studentName,
       time: new Date().toLocaleTimeString('pt-br', {
