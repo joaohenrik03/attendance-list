@@ -32,7 +32,9 @@ export function App() {
   const [userInfos, setUserInfos] = useState<GitHubInfos>({} as GitHubInfos);
 
   useEffect(() => {
-    fetch('https://api.github.com/users/joaohenrik03')  
+    const userGitHub: string = 'joaohenrik03';
+
+    fetch(`https://api.github.com/users/${userGitHub}`)  
     .then(response => response.json())
     .then((data: GitHubInfos) => {
       setUserInfos({
@@ -40,7 +42,7 @@ export function App() {
         avatar_url: data.avatar_url
       })
     })
-  });
+  }, []);
 
   return (
     <div className="container">
