@@ -1,6 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Listed, UserListed } from './components/Listed';
 import './App.css';
+
+type GitHubInfos = {
+  name: string;
+  avatar_url: string;
+}
 
 export function App() {
   const [studentName, setStudentName] = useState<string>('');
@@ -20,6 +25,19 @@ export function App() {
     setStudentName('');
   }
 
+  const [userInfos, setUserInfos] = useState<GitHubInfos>({} as GitHubInfos);
+
+  useEffect(() => {
+    fetch('https://api.github.com/users/joaohenrik03')  
+    .then(response => response.json())
+    .then((data: GitHubInfos) => {
+      setUserInfos({
+        name: data.name,
+        avatar_url: data.avatar_url
+      })
+    })
+  });
+
   return (
     <div className="container">
       <header className='header'>
@@ -27,8 +45,8 @@ export function App() {
           Lista de presença
         </h1>
         <div className="header__logo">
-          <strong>João Henrik</strong>  
-          <img src="https://github.com/joaohenrik03.png" alt="Foto do Usuário" />
+          <strong>{userInfos.name}</strong>  
+          <img src={userInfos.avatar_url} alt="Foto do Usuário" />
         </div> 
       </header>  
 
