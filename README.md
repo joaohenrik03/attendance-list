@@ -44,7 +44,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Bibliotecas:
 
-- [React JS](https://pt-br.reactjs.org/)
+- [React](https://pt-br.reactjs.org/)
 
 <hr>
 
@@ -66,9 +66,6 @@ Feito com ❤️ por João Henrik.
 <a href="mailto:jh.signori@gmail.com" target="_blank">
   <img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
 </a>
-<a href="https://discord.gg/ZTM4QudD" target="_blank">
-  <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
-</a> 
 
 <hr>
 
